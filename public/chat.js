@@ -1,6 +1,6 @@
 
 //var socket = io.connect('http://localhost:8000');
-var socket = io.connect('http://app44chat.herokuapp.com');
+var socket = io.connect('https://app44chat.herokuapp.com');
 
 var output = document.getElementById('output');
 var handler = document.getElementById('handle');
