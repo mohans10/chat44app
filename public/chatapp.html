@@ -1,0 +1,27 @@
+<html>
+        <head><title>ChatApp</title>
+                <link rel="stylesheet" type="text/css" href="mystyle.css">
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
+                
+        </head>
+        
+        <body>
+                <div id="maindiv" align="center">
+                        <h2>ChatApp</h2>
+                        <div id="chatspace">
+                                <div id="feed"></div>
+                                <div id="output"></div>
+                        </div>
+                        <input id="handle" class="move" type="text" readonly/>
+                        <input id="message" class="move" type="text" placeholder=" Type your message"/>
+                        <button id="send" class="move">Send</button>
+                        <button id="logout" class="move">Logout</button>
+                        <div id="info" class="move">
+                                <p><u>Online Members</u></p>
+                                <p id="label"></p>
+
+                        </div>
+                </div>
+        </body>
+        <script src="chat.js"></script>
+        </html>

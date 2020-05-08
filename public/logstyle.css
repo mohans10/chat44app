@@ -1,0 +1,90 @@
+#main{background-image: url('images/white.jpg');
+    position: relative;
+    height: 400px;
+    width: 500px;
+    top: 100px;
+    left: 400px;
+}
+
+#user{
+    position: relative;
+    top: 10px;
+    left: 150px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#pass{
+    position: relative;
+    top: 10px;
+    left: 150px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#login{
+    position: relative;
+    width: 100px;
+    top: 12px;
+    left: 160px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: chartreuse;
+    
+}
+
+#reg{
+    position: absolute;
+    top: 250px;
+    left: 135px;
+    color: black;
+}
+
+#head{
+    position: relative;
+    top: 20px;
+    margin-left: 120px;
+    font-size: 30px;
+}
+
+#username{
+    position: relative;
+    top: 10px;
+    left: 150px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#name{
+    position: relative;
+    top: 10px;
+    left: 150px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+
+#password{
+    position: relative;
+    top: 10px;
+    left: 150px;
+    padding: 5px;
+    border-radius: 15px;
+}
+
+#register{
+    position: relative;
+    width: 100px;
+    top: 12px;
+    left: 160px;
+    padding: 5px;
+    border-radius: 15px;
+    background-color: chartreuse;
+    
+}
+#log{
+    position: absolute;
+    top: 300px;
+    left: 135px;
+    color: black;
+}
