@@ -7,10 +7,10 @@ var app = express();
 
 var connection = mysql.createConnection({
 
-    host: 'ec2-34-233-186-251.compute-1.amazonaws.com',
-    user: 'soipxfxiscgyjs',
-    password: 'beb12eb70039ad401a5afada1e3f82455abbaa23c50d7f5244a69fc06d3825e9',
-    database: 'dfunka53jofr79'
+    host: 'ec2-50-17-21-170.compute-1.amazonaws.com',
+    user: 'bjjawdmlqueguz',
+    password: '0265b2b9f4f28eab45b786315bdbd30b24940cfe29f7903c92cc4642f6860ced',
+    database: 'd1skadp5q03t7g'
 });
 
 connection.connect(function(error){
