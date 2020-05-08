@@ -7,10 +7,10 @@ var app = express();
 
 var connection = mysql.createConnection({
 
-    host: 'localhost',
-    user: 'mohans10',
-    password: '',
-    database: 'test'
+    host: 'ec2-34-233-186-251.compute-1.amazonaws.com',
+    user: 'soipxfxiscgyjs',
+    password: 'beb12eb70039ad401a5afada1e3f82455abbaa23c50d7f5244a69fc06d3825e9',
+    database: 'dfunka53jofr79'
 });
 
 connection.connect(function(error){
@@ -22,8 +22,8 @@ connection.connect(function(error){
     }
 });
 
-var server = app.listen(8000,function(){
-    console.log('connection made at server 8000');
+var server = app.listen(process.env.PORT,function(){
+    console.log('connection made');
 });
 
 app.use(express.static('public'));

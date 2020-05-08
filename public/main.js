@@ -1,4 +1,5 @@
-var socket = io.connect('http://localhost:8000');
+//var socket = io.connect('http://localhost:8000');
+var socket = io.connect('http://app4chat.herokuapp.com');
 var register = document.getElementById('register');
 var naMe = document.getElementById('name');
 var username  = document.getElementById('username');
