@@ -18,10 +18,10 @@ var app = express();
 
 var connection = mysql.createConnection({
 
-    host: 'ec2-52-72-65-76.compute-1.amazonaws.com',
-    user: 'kfiryvxxsvrblt',
-    password: '5c69564a3cdafaef85cc94c1f9a75d215d0c7691dfb2b811ef8a8cbc8f0ffc67',
-    database: 'dctqfc8es2qjqe'
+    host: 'us-cdbr-east-06.cleardb.net',
+    user: 'ba42621b801182',
+    password: '0e5464dc',
+    database: 'heroku_61c94d2cb2c1d53'
 });
 
 connection.connect(function(error){
