@@ -6,13 +6,7 @@ var nm = [];
 
 var app = express();
 
-var connection = mysql.createConnection({
-
-    host: 'us-cdbr-east-06.cleardb.net',
-    user: 'ba42621b801182',
-    password: '0e5464dc',
-    database: 'heroku_61c94d2cb2c1d53'
-});
+var connection = mysql.createConnection();
 
 connection.connect(function(error){
     if(error){
