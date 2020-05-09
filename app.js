@@ -1,10 +1,21 @@
 var express = require('express');
 var mysql = require('mysql');
 var socket = require('socket.io');
+const {Client} = require('pg');
 var nm = [];
 
-var app = express();
+const client =  new Client({
+    host: 'ec2-52-72-65-76.compute-1.amazonaws.com',
+    user: 'kfiryvxxsvrblt',
+    password: '5c69564a3cdafaef85cc94c1f9a75d215d0c7691dfb2b811ef8a8cbc8f0ffc67',
+    database: 'dctqfc8es2qjqe',
+    port : 5432,
+});
 
+client.connect();
+
+var app = express();
+/*
 var connection = mysql.createConnection({
 
     host: 'ec2-52-72-65-76.compute-1.amazonaws.com',
@@ -20,7 +31,7 @@ connection.connect(function(error){
     else{
         console.log('sql connection success');
     }
-});
+});*/
 
 var server = app.listen(process.env.PORT,function(){
     console.log('connection made');
@@ -35,25 +46,26 @@ io.on('connection',function(socket){
     
     socket.on('register',function(data){
         var mysql1 = 'INSERT INTO member VALUES (1,?,?,?)';
-        connection.query(mysql1,[data.naMe,data.username,data.password],function(error){
+        client.query(mysql1,[data.naMe,data.username,data.password],function(error){
             if(error){
                 console.log('error in reg query');
             }
             else{
                 console.log('reg query success');
             }
+            client.end();
         });
     });
 
     socket.on('login',function(data){
         
         var mysql2 = 'SELECT * FROM member';
-        connection.query(mysql2,function(error,rows,field){
+        client.query(mysql2,function(error,rows,field){
             if(error){
                 console.log('error in login query');
             }
             else{
-                connection.query('SELECT sum(id) as cnt FROM member',function(error,no_rows){
+                client.query('SELECT sum(id) as cnt FROM member',function(error,no_rows){
 
                    for(var j=0;j<no_rows[0].cnt;j++){
                     if((rows[j].username==data.user)&&(rows[j].password==data.pass)){
@@ -72,8 +84,10 @@ io.on('connection',function(socket){
                        }
                     }
                 }
+                client.end();
             });
             }
+            client.end();
         });
     });
 
