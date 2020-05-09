@@ -55,7 +55,7 @@ io.on('connection',function(socket){
             }
             else{
                 connection.query('SELECT sum(id) as cnt FROM member',function(error,no_rows){
-
+                if(!error){
                    for(var j=0;j<no_rows[0].cnt;j++){
                     if((rows[j].username==data.user)&&(rows[j].password==data.pass)){
                         console.log('login success');
@@ -73,6 +73,7 @@ io.on('connection',function(socket){
                        }
                     }
                 }
+            }
             });
             }
         });
