@@ -26,6 +26,7 @@ var connection = mysql.createConnection({
 
 connection.connect(function(error){
     if(error){
+        socket.emit('fail',error);
         console.log('Error conecting sql');
     }
     else{
