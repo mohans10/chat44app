@@ -1,18 +1,8 @@
 var express = require('express');
 var mysql = require('mysql');
 var socket = require('socket.io');
-//const {Client} = require('pg');
-var nm = [];
-/*
-const client =  new Client({
-    host: 'ec2-52-72-65-76.compute-1.amazonaws.com',
-    user: 'kfiryvxxsvrblt',
-    password: '5c69564a3cdafaef85cc94c1f9a75d215d0c7691dfb2b811ef8a8cbc8f0ffc67',
-    database: 'dctqfc8es2qjqe',
-    port : 5432,
-});
 
-client.connect();*/
+var nm = [];
 
 var app = express();
 
@@ -26,7 +16,6 @@ var connection = mysql.createConnection({
 
 connection.connect(function(error){
     if(error){
-        //window.location.href='public/error.html';
         console.log('Error conecting sql');
     }
     else{
@@ -54,7 +43,6 @@ io.on('connection',function(socket){
             else{
                 console.log('reg query success');
             }
-           // client.end();
         });
     });
 
@@ -85,10 +73,8 @@ io.on('connection',function(socket){
                        }
                     }
                 }
-                //client.end();
             });
             }
-           // client.end();
         });
     });
 
