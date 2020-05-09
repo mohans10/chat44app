@@ -24,11 +24,11 @@ socket.on('chatpage',function(data){
 socket.on('failed',function(){
     alert("Username or Password not found");
 });
-
+/*
 socket.on('fail',function(data){
     if(data){
         user.value="";
     }else{
         pass.value="";
     }
-});
+});*/
