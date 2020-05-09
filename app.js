@@ -101,7 +101,7 @@ io.on('connection',function(socket){
     socket.on('online',function(data){
         setTimeout(() => {
             io.sockets.emit('online',data);
-        }, 500);
+        }, 10000);
     });
 
     socket.on('remove',function(data){
