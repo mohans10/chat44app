@@ -5,7 +5,7 @@ var socket = require('socket.io');
 var nm = [];
 
 var app = express();
-
+/*
 var connection = mysql.createConnection({
 
     host: 'us-cdbr-east-06.cleardb.net',
@@ -22,9 +22,9 @@ connection.connect(function(error){
         console.log('sql connection success');
     }
 });
-
+*/
 var server = app.listen(process.env.PORT,function(){
-    console.log('connection made');
+    console.log('server connection made');
 });
 
 app.use(express.static('public'));
