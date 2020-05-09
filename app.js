@@ -6,7 +6,11 @@ var nm = [];
 
 var app = express();
 
-var connection = mysql.createConnection();
+var server = app.listen(process.env.PORT,function(){
+    console.log('server connection made');
+});
+
+var connection = mysql.createConnection('mysql://ba42621b801182:0e5464dc@us-cdbr-east-06.cleardb.net/heroku_61c94d2cb2c1d53?reconnect=true');
 
 connection.connect(function(error){
     if(error){
@@ -15,10 +19,6 @@ connection.connect(function(error){
     else{
         console.log('sql connection success');
     }
-});
-
-var server = app.listen(process.env.PORT,function(){
-    console.log('server connection made');
 });
 
 app.use(express.static('public'));
