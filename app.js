@@ -10,16 +10,33 @@ var server = app.listen(process.env.PORT,function(){
     console.log('server connection made');
 });
 
-var connection = mysql.createConnection('mysql://ba42621b801182:0e5464dc@us-cdbr-east-06.cleardb.net/heroku_61c94d2cb2c1d53?reconnect=true');
+var connection;
+function handleDisconnect(){
+    connection = mysql.createConnection('mysql://ba42621b801182:0e5464dc@us-cdbr-east-06.cleardb.net/heroku_61c94d2cb2c1d53?reconnect=true');
 
-connection.connect(function(error){
-    if(error){
-        console.log('Error conecting sql');
-    }
-    else{
-        console.log('sql connection success');
-    }
-});
+    connection.connect(function(error){
+        if(error){
+            console.log('Error conecting sql');
+            setTimeout(handleDisconnect,2000);
+        }
+        else{
+            console.log('sql connection success');
+        }
+    });
+    
+    connection.on('error',function(error){
+        console.log('database error',error);
+        if(error.code=='PROTOCOL_CONNECTION_LOST'){
+            handleDisconnect();
+        }
+        else{
+            throw error;
+        }
+    });
+}
+handleDisconnect();
+
+
 
 app.use(express.static('public'));
 
